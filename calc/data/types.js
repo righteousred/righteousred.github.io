@@ -54,6 +54,7 @@ exports.__esModule = true;
 var util_1 = require("../util");
 var RBY = {
     '???': {
+        '???': 1,
         Normal: 1,
         Grass: 1,
         Fire: 1,
