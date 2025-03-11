@@ -664,6 +664,7 @@ $(".set-selector").change(function () {
 			$(this).closest('.poke-info').find(".role-pool").hide();
 			$(this).closest('.poke-info').find(".tera-type-pool").hide();
 		}
+    var player = pokeObj.attr("id") == "p1";
 		if (regSets || randset) {
 			var set = regSets ? correctHiddenPower(setdex[pokemonName][setName]) : randset;
 			if (regSets) {
@@ -677,7 +678,7 @@ $(".set-selector").change(function () {
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(
 					(set.ivs && set.ivs[stat] !== undefined) ? set.ivs[stat] : 31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(
-					(set.dvs && set.dvs[stat] !== undefined) ? set.dvs[stat] : 15);
+					(set.dvs && set.dvs[stat] !== undefined) ? set.dvs[stat] : player ? 15 : (stat == "at" ? 9 : 8));
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
@@ -718,11 +719,11 @@ $(".set-selector").change(function () {
 			pokeObj.find(".level").val(defaultLevel);
 			pokeObj.find(".hp .evs").val(0);
 			pokeObj.find(".hp .ivs").val(31);
-			pokeObj.find(".hp .dvs").val(15);
+			pokeObj.find(".hp .dvs").val(player ? 15 : 8);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(0);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(31);
-				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(15);
+				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(player ? 15 : (LEGACY_STATS[gen][i] == "at" ? 9 : 8));
 			}
 			pokeObj.find(".nature").val("Hardy");
 			//setSelectValueIfValid(abilityObj, pokemon.abilities[0], "");
