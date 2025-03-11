@@ -149,13 +149,11 @@ $(".evs").bind('keyup change', function () {
 $(".at .dvs").keyup(function () {
 	var poke = $(this).closest(".poke-info");
 	calcStat(poke, 'at');
-	poke.find(".hp .dvs").val(getHPDVs(poke));
 	calcHP(poke);
 });
 $(".df .dvs").keyup(function () {
 	var poke = $(this).closest(".poke-info");
 	calcStat(poke, 'df');
-	poke.find(".hp .dvs").val(getHPDVs(poke));
 	calcHP(poke);
 });
 $(".sa .dvs").keyup(function () {
@@ -163,19 +161,16 @@ $(".sa .dvs").keyup(function () {
 	calcStat(poke, 'sa');
 	poke.find(".sd .dvs").val($(this).val());
 	calcStat(poke, 'sd');
-	poke.find(".hp .dvs").val(getHPDVs(poke));
 	calcHP(poke);
 });
 $(".sp .dvs").keyup(function () {
 	var poke = $(this).closest(".poke-info");
 	calcStat(poke, 'sp');
-	poke.find(".hp .dvs").val(getHPDVs(poke));
 	calcHP(poke);
 });
 $(".sl .dvs").keyup(function () {
 	var poke = $(this).closest(".poke-info");
 	calcStat(poke, 'sl');
-	poke.find(".hp .dvs").val(getHPDVs(poke));
 	calcHP(poke);
 });
 
