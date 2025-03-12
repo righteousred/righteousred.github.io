@@ -73,7 +73,7 @@ function legacyStatToStat(st) {
 var bounds = {
 	"level": [0, 125],
 	"base": [1, 255],
-	"evs": [0, 252],
+	"evs": [0, 160],
 	"ivs": [0, 31],
 	"dvs": [0, 15],
 	"move-bp": [0, 65535]
